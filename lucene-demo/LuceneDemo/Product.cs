@@ -4,20 +4,20 @@
 
     public class Product
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public string Description { get; set; }
+        public virtual string Description { get; set; }
 
-        public Brand Brand { get; set; }
+        public virtual Brand Brand { get; set; }
 
-        public List<Category> Category { get; set; }
+        public virtual List<Category> Category { get; set; }
 
-        public double Price { get; set; }
+        public virtual double Price { get; set; }
 
-        public List<Color> Colors { get; set; }
+        public virtual List<Color> Colors { get; set; }
 
-        public List<Size> Sizes { get; set; }
+        public virtual List<Size> Sizes { get; set; }
     }
 }

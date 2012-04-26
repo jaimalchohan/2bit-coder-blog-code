@@ -4,10 +4,10 @@
 
     public class Color
     {
-        public int Id { get; set; }
+        public virtual int Id { get; set; }
 
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
 
-        public List<Product> Products { get; set; }
+        public virtual List<Product> Products { get; set; }
     }
 }
