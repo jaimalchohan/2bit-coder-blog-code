@@ -8,6 +8,9 @@
         {
             Id(x => x.Id);
 
+            Map(x => x.Name);
+
+            HasMany(x => x.Products);
         }
     }
 }

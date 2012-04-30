@@ -46,6 +46,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Mapping\BrandMap.cs" />
+    <Compile Include="Mapping\CategoryMap.cs" />
+    <Compile Include="Mapping\ColorMap.cs" />
+    <Compile Include="Mapping\DepartmentMap.cs" />
+    <Compile Include="Mapping\ProductMap.cs" />
+    <Compile Include="Mapping\SizeMap.cs" />
+    <Compile Include="ProductDbSession.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

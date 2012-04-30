@@ -8,6 +8,6 @@
 
         public virtual string Name { get; set; }
 
-        public virtual List<Product> Products { get; set; }
+        public virtual IList<Product> Products { get; set; }
     }
 }

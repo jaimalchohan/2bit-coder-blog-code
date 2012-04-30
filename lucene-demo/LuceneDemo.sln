@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneDemo", "LuceneDemo\Lu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneDemo.Data", "LuceneDemo.Data\LuceneDemo.Data.csproj", "{BCBE6A64-DE98-4EA2-A50B-FCDB42F03135}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneDemo.Tests", "LuceneDemo.Tests\LuceneDemo.Tests.csproj", "{453A8D67-C0D1-474F-AAC3-7A76585DA614}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{BCBE6A64-DE98-4EA2-A50B-FCDB42F03135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BCBE6A64-DE98-4EA2-A50B-FCDB42F03135}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BCBE6A64-DE98-4EA2-A50B-FCDB42F03135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{453A8D67-C0D1-474F-AAC3-7A76585DA614}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{453A8D67-C0D1-474F-AAC3-7A76585DA614}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{453A8D67-C0D1-474F-AAC3-7A76585DA614}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{453A8D67-C0D1-474F-AAC3-7A76585DA614}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

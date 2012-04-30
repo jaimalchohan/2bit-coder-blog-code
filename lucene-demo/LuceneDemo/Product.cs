@@ -12,12 +12,12 @@
 
         public virtual Brand Brand { get; set; }
 
-        public virtual List<Category> Category { get; set; }
+        public virtual IList<Category> Categories { get; set; }
 
         public virtual double Price { get; set; }
 
-        public virtual List<Color> Colors { get; set; }
+        public virtual IList<Color> Colors { get; set; }
 
-        public virtual List<Size> Sizes { get; set; }
+        public virtual IList<Size> Sizes { get; set; }
     }
 }
