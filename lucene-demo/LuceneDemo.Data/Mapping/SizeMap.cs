@@ -10,7 +10,7 @@ namespace LuceneDemo.Data.Mapping
 
             Map(x => x.Name);
 
-            HasManyToMany(x => x.Products);
+            HasManyToMany(x => x.Products).Table("SizeProduct");
         }
     }
 }

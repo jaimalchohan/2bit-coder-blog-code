@@ -12,10 +12,10 @@ namespace LuceneDemo.Data
 
         private ProductDbSession()
         {
-            // Static Initializer
+            // Private Initializer
         }
 
-        public static void Configure()
+        public static ProductDbSession Configure()
         {
             if(_sessionFactory == null)
             {
@@ -28,9 +28,11 @@ namespace LuceneDemo.Data
             {
                 throw new InvalidOperationException("Object has already ben initalised.");
             }
+
+            return new ProductDbSession();
         }
 
-        public static ISession Open()
+        public ISession Open()
         {
             return _sessionFactory.OpenSession();
         }

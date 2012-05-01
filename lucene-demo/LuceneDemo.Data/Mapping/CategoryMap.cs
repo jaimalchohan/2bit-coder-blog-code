@@ -12,7 +12,7 @@ namespace LuceneDemo.Data.Mapping
 
             References(x => x.Department);
 
-            HasManyToMany(x => x.Products);
+            HasManyToMany(x => x.Products).Table("ProductCategory");
         }
     }
 }
