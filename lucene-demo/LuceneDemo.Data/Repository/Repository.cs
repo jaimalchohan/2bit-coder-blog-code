@@ -3,7 +3,7 @@ namespace LuceneDemo.Data.Repository
     using System.Collections.Generic;
     using NHibernate;
 
-    public abstract class Repository<T> : IRepository<T>
+    public abstract class Repository<T> : IRepository<T> where T: class
     {
         private readonly ISession _session;
 
