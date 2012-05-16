@@ -1,6 +1,0 @@
-<Modules>
-  <Module PersistentId="A9E130ED-CFC3-43CA-BDC5-D63C986186EC" ModuleId="LuceneDemo" />
-  <Module PersistentId="BCBE6A64-DE98-4EA2-A50B-FCDB42F03135" ModuleId="LuceneDemo.Data" />
-  <Module PersistentId="EE555D9B-B2E7-4558-BA8B-EDD0DFC6E5CB" ModuleId="LuceneDemoTests" />
-  <Module PersistentId="453A8D67-C0D1-474F-AAC3-7A76585DA614" ModuleId="LuceneDemo.Tests" />
-</Modules>
