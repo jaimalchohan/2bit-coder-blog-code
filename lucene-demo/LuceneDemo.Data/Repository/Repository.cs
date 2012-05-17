@@ -5,19 +5,19 @@ namespace LuceneDemo.Data.Repository
 
     public abstract class Repository<T> : IRepository<T> where T: class
     {
-        private readonly ISession _session;
+        protected readonly ISession _session;
 
         protected Repository(ISession session)
         {
             _session = session;
         }
 
-        public T Get(int id)
+        public virtual  T Get(int id)
         {
             return _session.Get<T>(id);
         }
 
-        public IEnumerable<T> All()
+        public virtual IEnumerable<T> All()
         {
             return _session.QueryOver<T>().List();
         }

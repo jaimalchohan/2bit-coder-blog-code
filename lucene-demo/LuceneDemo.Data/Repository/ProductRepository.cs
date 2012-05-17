@@ -9,5 +9,12 @@
         {
 
         }
+
+        public override Product Get(int id)
+        {
+            return base.Get(id);
+            //NHibernateUtil.Initialize(p.Brand);
+
+        }
     }
 }

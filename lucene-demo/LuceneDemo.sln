@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneDemo.Tests", "LuceneD
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneDemo.Service", "LuceneDemo.Service\LuceneDemo.Service.csproj", "{5522411D-3777-4E66-93CA-135F448CF7D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuceneDemo.Service.Contracts", "LuceneDemo.Service.Contracts\LuceneDemo.Service.Contracts.csproj", "{3EA96004-1B71-46A8-8D74-8CE8ADA9A9EA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{5522411D-3777-4E66-93CA-135F448CF7D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5522411D-3777-4E66-93CA-135F448CF7D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5522411D-3777-4E66-93CA-135F448CF7D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA96004-1B71-46A8-8D74-8CE8ADA9A9EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA96004-1B71-46A8-8D74-8CE8ADA9A9EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA96004-1B71-46A8-8D74-8CE8ADA9A9EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA96004-1B71-46A8-8D74-8CE8ADA9A9EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
