@@ -15,9 +15,8 @@
 
         public Product GetProduct(int id)
         {
-            var pd = _productRepository.Get(id);
-            var pc = Mapper.Map<LuceneDemo.Product, LuceneDemo.Service.Contracts.Product>(pd);
-            return pc;
+            var product = _productRepository.Get(id);
+            return Mapper.Map<LuceneDemo.Product, Product>(product);
         }
     }
 }

@@ -69,6 +69,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Plumbing\AutoMapperConfiguration.cs" />
+    <Compile Include="Plumbing\AutoMapperMaps\BrandAutoMap.cs" />
+    <Compile Include="Plumbing\AutoMapperMaps\CategoryAutoMap.cs" />
+    <Compile Include="Plumbing\AutoMapperMaps\ColorAutoMap.cs" />
+    <Compile Include="Plumbing\AutoMapperMaps\DepartmentAutoMap.cs" />
+    <Compile Include="Plumbing\AutoMapperMaps\ProductAutoMap.cs" />
+    <Compile Include="Plumbing\AutoMapperMaps\SizeAutoMap.cs" />
     <Compile Include="Plumbing\RepositoriesInstaller.cs" />
     <Compile Include="Plumbing\ServicesInstaller.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -1,13 +1,17 @@
 ﻿namespace LuceneDemo.Service.Plumbing
 {
-    using AutoMapper;
+    using LuceneDemo.Service.Plumbing.AutoMapperMaps;
 
     public class AutoMapperConfiguration
     {
         public static void Configure()
         {
-            Mapper.CreateMap<LuceneDemo.Product, LuceneDemo.Service.Contracts.Product>();
-
+            BrandAutoMap.Configure();
+            CategoryAutoMap.Configure();
+            ColorAutoMap.Configure();
+            DepartmentAutoMap.Configure();
+            ProductAutoMap.Configure();
+            SizeAutoMap.Configure();
         }
     }
 }
