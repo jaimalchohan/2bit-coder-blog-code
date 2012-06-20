@@ -1,15 +1,15 @@
 {
   "name": "JustGiving Fundraising Summary",
-  "version": "1.3",
+  "version": "1.5",
   "manifest_version": 2,
-  "description": "A summary of a JustGiving fundraising page",
+  "description": "An instantly accessible summary of a JustGiving fundraising event.",
   "icons": { "48": "icon-medium.jpeg",
           "128": "icon-large.png" },
   "browser_action": {
     "default_icon": "icon.png",
     "default_popup": "popup.html"
   },
-  "content_security_policy": "script-src 'self' https://ajax.aspnetcdn.com; https://www.justgiving.com; object-src 'self'",
+  "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://www.justgiving.com https://ajax.aspnetcdn.com; object-src 'self'",
   "permissions": [
     "https://api.justgiving.com/"
   ]
