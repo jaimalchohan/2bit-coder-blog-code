@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+  <head>
+    <title>JustGiving Fundraising Summary</title>
+	<link rel="stylesheet" href="style.css" />
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-1.6.2.min.js"></script>
+	<script src="popup.js"></script>
+	<script src="thermometer.js"></script>
+  </head>
+  <body>
+	<div class="container">
+		<img id="logo" src="logo-justgiving-small.png" />
+		<p class="event-name"></p>
+
+		<div class="starburst">
+			<span><span><span><span><span><span><span><span><span><span><span><span>
+			</span></span></span></span></span></span></span></span></span></span></span></span>
+		</div>
+		
+		<span id="thermometer" class="frp-thermometer">
+			<div class="base">
+				<div class="raised">
+					<div class="uncover"></div>
+				</div>
+			</div>
+			<strong><em>0<em class="cent-sign">%</em></em></strong>
+		</span>
+		<div id="donation-overview">				
+			<p>
+				<span class="raised-so-far">
+					
+				</span>
+				<em>raised of <span class="target"></span> target</em>
+			</p>
+			<p>
+				<span class="donations-count"></span>
+				<em>donations</em>
+			</p>
+		</div>
+		<div class="clear">&nbsp;</div>
+		<a class="page-link" href="#">Goto this JustGiving page</a>
+		<a class="settings-link" href="#">Settings</a>
+	</div>
+	
+	<div class="options-container">
+		<img id="logo" src="logo-justgiving-small.png" />
+		
+		<p>Your JustGiving Page Url:</p>
+		<input class="page-url" type="text" />
+		<br/>
+		<em>(www.justgiving.com/my-fundraising-page)</em>
+		<br />
+		<span class="error">That URL was invalid, please check and try again.</span>
+		<br />
+		<button class="save-options">Save</button>
+	</div>
+  </body>
+</html>
