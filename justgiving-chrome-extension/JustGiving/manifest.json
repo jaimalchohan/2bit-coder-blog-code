@@ -10,7 +10,7 @@
     "default_popup": "popup.html"
   },
   "background": {
-	"scripts": ["background.js"]
+	"page": "background.html"
   },
   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com https://www.justgiving.com https://ajax.aspnetcdn.com; object-src 'self'",
   "permissions": [
