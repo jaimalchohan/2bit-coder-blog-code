@@ -1,11 +1,8 @@
 var siteUrl = "https://www.justgiving.com/"
-var apiUrl = 'https://api.justgiving.com/';
-var apiKey = '88e40064';
-var fundRaisingApiPath = '/v1/fundraising/pages/';
-var donationsApiPath = '/donations'
+justgiving.apiKey = '88e40064';
+justgiving.apiUrl = 'https://api.justgiving.com/';
 
-$(document).ready(function() {
-  
+$(document).ready(function() {  
 	$('.save-options').click(function(){ saveSettings() });
 	var shortPageName = localStorage["shortPageName"];
 	
@@ -21,11 +18,8 @@ function showSummary(shortPageName){
 	$('.container').css('display', 'block');
 	$('.options-container').css('display', 'none');	
 	
-	$.get( apiUrl + apiKey + fundRaisingApiPath + shortPageName,
-		   showPageSummary);
-		   
-	$.get( apiUrl + apiKey + fundRaisingApiPath + shortPageName + donationsApiPath + '?PageSize=1&PageNum=1',
-		   showDonationsCount);
+	justgiving.getFundraisingPageDetails(shortPageName, showPageSummary)
+	justgiving.getFundraisingPageDonations(shortPageName, 1, 1, showDonationsCount);
 	
 	$('.page-link').click(function(){ openPageInTab(siteUrl + shortPageName) });
 	$('.settings-link').click(function(){ showSettings() });
@@ -39,12 +33,11 @@ function showSettings(){
 }
 
 function showPageSummary(data) {
-	data  = $(data);
-	var target = data.find('fundraisingTarget').text();
-	var raised = data.find('grandTotalRaisedExcludingGiftAid').text();
-	var eventName = data.find('eventName').text();
-	var thermBg = data.find('thermometerBackgroundColour').text();
-	var thermFill = data.find('thermometerFillColour').text();
+	var target = data.fundraisingTarget;
+	var raised = data.grandTotalRaisedExcludingGiftAid;
+	var eventName = data.eventName;
+	var thermBg = data.branding.thermometerBackgroundColour;
+	var thermFill = data.branding.thermometerFillColour;
 	
 
 	$('.raised-so-far').text('£' + Number(raised).toFixed(2));
@@ -59,8 +52,7 @@ function showPageSummary(data) {
 }
 	
 function showDonationsCount(data){
-	data  = $(data);
-	var total = data.find('totalPages').text();
+	var total = data.pagination.totalPages;
 	$('.donations-count').text(total);
 }
 	
@@ -70,25 +62,24 @@ function openPageInTab(url)
 }
 
 function saveSettings() {
-	var shortPageName = $('.page-url').val();
+	var url = $('.page-url').val();
+	
+	var shortPageName = justgiving.getShortPageNameFromUrl(url)
 
-	if(!shortPageName.match(/^(https?:\/\/)?(www\.)?justgiving\.com\/[a-z0-9-]+$/i)){
+	if(!shortPageName){
 		$('.error').css('display', 'block');
-	}
+	}	
 	
-	shortPageName = shortPageName.replace(/^(https?:\/\/)?(www\.)?justgiving\.com\/?/i, '');
-	
-	$.ajax({
-        type: "HEAD",
-        url: apiUrl + apiKey + fundRaisingApiPath + shortPageName,
-        success: function(){
+	justgiving.fundraisingPageUrlCheck(
+		shortPageName, 
+		function(){
             localStorage["shortPageName"] = shortPageName;
 			showSummary(shortPageName);
         },
-		error: function(){
+		function(data){
 			$('.error').css('display', 'block');
 		}
-    });
+	);
 }
 
 function restoreSettings() {
