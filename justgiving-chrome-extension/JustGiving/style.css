@@ -3,6 +3,7 @@ p { color: #4D4840; font-size: 1.3em; padding: 0; margin: 10px 0 10px 0; }
 em { font-style: normal; }
 .clear { clear: both; }
 .error { color: red; font-size: 0.8em; margin-top: 10px; }
+input[type="checkbox"] { float: left; margin: 2px 7px 3px 3px; }
 
 .container { margin: 10px; overflow: hidden; }
 #logo { width: 90px; height: 17px; border: 0px; }

@@ -1,22 +1,33 @@
 var donationsPoller = (function() {
 
 	'use strict';
+
+	var timer = null;
 	
 	function start(){
-		var shortPageName = datastore.fetchShortPageName();
+		if(!timer){
+			poll();
+		}
+	}
 	
-		if(!shortPageName){ return; }
-	
-		poll();
+	function stop() {
+		clearTimeout(timer);
+		timer = null;
+		datastore.saveDonationsCount('');
 	}
 	
 	function poll(){
-		setTimeout(function(){
-			justgiving.getFundraisingPageDonations(datastore.fetchShortPageName(), 1, 1, donationsUpdated)
-		}, 3000);
+		if(!donationsPoller.shortPageName){ return; }
+		if(!datastore.fetchNotificationsEnabled()) { return; }
+
+		timer = setTimeout(function(){
+					justgiving.getFundraisingPageDonations(donationsPoller.shortPageName, 1, 1, 
+						donationsSuccess, 
+						dontaionsFailure)
+				}, 3000);
 	};
 	
-	function donationsUpdated(data){
+	function donationsSuccess(data){
 		var oldCount = datastore.fetchDonationsCount();
 		var newCount = data.pagination.totalPages;
 		
@@ -28,11 +39,18 @@ var donationsPoller = (function() {
 			chrome.browserAction.setBadgeText({ text: String(newCount - oldCount) });
 			datastore.saveDonationsCount(newCount);
 		}
-		poll(data.id);
+		poll();
+	}
+	
+	function dontaionsFailure(){
+		poll();
 	}
 	
 	return {
-		start: start
+		shortPageName: null,
+		start: start,
+		stop: stop
+		
 	};
 }());
   

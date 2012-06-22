@@ -59,8 +59,7 @@ function showDonationsCount(data){
 	$('.donations-count').text(total);
 }
 	
-function openPageInTab(url)
-{
+function openPageInTab(url) {
 	chrome.tabs.create({ 'url': url });
 }
 
@@ -73,10 +72,15 @@ function saveSettings() {
 		$('.error').css('display', 'block');
 	}
 	
+	var enabled = $(".notifications-enabled").prop("checked");
+	
 	justgiving.fundraisingPageUrlCheck(
 		shortPageName, 
 		function(){
             datastore.saveShortPageName(shortPageName);
+			datastore.saveNotificationsEnabled(enabled);
+			chrome.extension.getBackgroundPage().donationsPoller.stop();
+			chrome.extension.getBackgroundPage().donationsPoller.shortPageName = shortPageName;
 			chrome.extension.getBackgroundPage().donationsPoller.start();
 			showSummary(shortPageName);
         },
@@ -88,10 +92,13 @@ function saveSettings() {
 
 function restoreSettings() {
 	var shortPageName = datastore.fetchShortPageName();
-	if (!shortPageName) {
-		return;
+	var enabled = datastore.fetchNotificationsEnabled();
+	
+	if (shortPageName) {
+		$('.page-url').val('https://www.justgiving.com/' + shortPageName);
 	}
-	$('.page-url').val('https://www.justgiving.com/' + shortPageName);
+
+	$(".notifications-enabled").prop("checked", enabled);
 }
 
 function clearBadgeText(value){
